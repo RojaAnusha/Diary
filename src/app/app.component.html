@@ -1,0 +1,22 @@
+<div class="container main">
+  <div class="jumbotron welcome-text">
+    <h1 class="display-5">Hello, {{userName}}!</h1>
+    <p class="lead">Please select a date and enter notes against it...</p>
+    <hr class="my-4">
+  </div>
+  <form class="container user-area">
+    <div class="form-group row">
+      <label for="seldate" class="col-form-label date-label">Select Date:</label>
+      <div>
+        <input type="date" id="seldate" name="seldate" [(ngModel)]="date" (change)="onDateChange()">
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="notes" class="col-form-label notes-label">Enter Your Notes here</label>
+      <textarea class="form-control" id="notes" name="notes" rows="5" [(ngModel)]="notes"></textarea>
+    </div>
+    <button type="button" class="btn btn-primary save-btn" [disabled]="!date" (click)="saveData()">Save Notes</button>
+  </form>
+
+</div>
+
